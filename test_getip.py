@@ -1,6 +1,11 @@
 import pytest
 import getip
 
+'''
+To run test type:
+python -m pytest
+'''
+
 def test_getip():
     assert getip.getip('valid ip 0.0.0.0')[0] == '0.0.0.0'
     assert getip.getip('valid ip 1.1.1.1')[0] == '1.1.1.1'
