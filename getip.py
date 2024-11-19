@@ -3,12 +3,35 @@
 
 import re
 
-def getip(line):
-    p = re.compile(r"(?:^|\s|\[|\|)((?:\d{1,3}\.){3}\d{1,3})(?:$|\s|\]|\|)")
+import re
+
+import re
+
+def getip(line: str) -> list:
+    """
+    Extracts and returns IP addresses from a given string.
+
+    Parameters:
+        line (str): The input string within which to find IP addresses.
+
+    Returns:
+        list: A list of extracted IP addresses as strings. If no IP addresses are found, returns an empty list.
+    """
+
+    # Regular expression pattern to match IP addresses
+    p = re.compile(r'(?:^|\s|\[|\||\'|\,)((?:\d{1,3}\.){3}\d{1,3})\.?(?:$|\s|\]|\||\'|\,)')
+
+    # Find all occurrences of IP addresses in the input string
     m = p.findall(line)
-    if(m):
+
+    if m:
         return m
+
     return None
+
+
+
+
 
 '''
     Detect if we are being called as a script and print out all the ips
