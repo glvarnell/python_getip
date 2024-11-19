@@ -10,8 +10,15 @@ def getip(line):
         return m
     return None
 
+'''
+    Detect if we are being called as a script and print out all the ips
+    allows us to do
+    cat sample_ips.txt | ./getips.py | sort -u > found_ips.txt
+'''
 if __name__ == "__main__":
     import sys
     for line in sys.stdin:
         result = getip(line)
-        print(result)
+        if(result):
+            for ip in result:
+                print(ip)
