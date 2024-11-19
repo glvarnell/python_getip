@@ -9,3 +9,9 @@ def getip(line):
     if(m):
         return m
     return None
+
+if __name__ == "__main__":
+    import sys
+    for line in sys.stdin:
+        result = getip(line)
+        print(result)
