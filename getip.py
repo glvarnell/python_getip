@@ -4,7 +4,7 @@
 import re
 
 def getip(line):
-    p = re.compile(r"\b((?:\d{1,3}\.){3}\d{1,3})")
+    p = re.compile(r"(?:^|\s|\[|\|)((?:\d{1,3}\.){3}\d{1,3})(?:$|\s|\]|\|)")
     m = p.findall(line)
     if(m):
         return m
@@ -12,7 +12,7 @@ def getip(line):
 
 '''
     Detect if we are being called as a script and print out all the ips
-    allows us to do
+    so we can do:
     cat sample_ips.txt | ./getips.py | sort -u > found_ips.txt
 '''
 if __name__ == "__main__":
