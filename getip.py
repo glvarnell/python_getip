@@ -27,7 +27,7 @@ def getip(line: str) -> list:
     """
 
     # Regular expression pattern to match IP addresses
-    p = re.compile(r'(?:^|\s|\[|\||\'|\,|\")((?:\d{1,3}\.){3}\d{1,3})\.?(?:$|\s|\]|\||\'|\,|\")')
+    p = re.compile(r'(?:^|\s|\[|\||\'|\,|\"|\()((?:\d{1,3}\.){3}\d{1,3})\.?(?:$|\s|\]|\||\'|\,|\"|\))')
 
     # Find all occurrences of IP addresses in the input string
     m = p.findall(line)
