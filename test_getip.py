@@ -12,6 +12,7 @@ def test_getip():
     assert getip('valid ip [1.1.1.1]')[0] == '1.1.1.1'
     assert getip('valid ip |1.1.1.1|')[0] == '1.1.1.1'
     assert getip('valid ip "1.1.1.1"')[0] == '1.1.1.1'
+    assert getip('valid ip (1.1.1.1)')[0] == '1.1.1.1'
     assert getip('valid ip "1.1.1.1" "1.1.1.0"') == ['1.1.1.1','1.1.1.0']
     x = getip('valid ip "1.1.1.1" "1.1.1.0"')
     assert x[0] == '1.1.1.1'
